@@ -1,0 +1,20 @@
+<meta charset="UTF-8"></meta>
+<div id="f">
+    <div class="data_list">
+        <div class="data_list_title">
+            <img src="/static/images/search_icon.png"></img>
+            电影搜索结果（搜索到<font color="red"><strong th:text="${total}"></strong></font>条结果&nbsp;）
+        </div>
+        <div class="datas clearfix">
+            <div class="imageLi  col-xs-6 col-md-3" th:each="film:${filmList}">
+                <a target="_blank" th:href="'/film/'+${film.id}" th:title="${film.name}">
+                    <img class="indexFilm  img-center" th:src="${film.imageName}"></img>
+                    <p th:text="${film.name}" class="text-center" style="font-size: 11px;"></p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script th:inline="javascript">
+        $(".imageDatas img").addClass("img-responsive");
+    </script>
+</div>

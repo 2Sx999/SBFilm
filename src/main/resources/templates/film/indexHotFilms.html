@@ -1,0 +1,22 @@
+<meta charset="UTF-8" xmlns:th="http://www.w3.org/1999/xhtml"></meta>
+<div id="f">
+    <div class="data_list">
+        <div class="data_list_title">
+            <img src="/static/images/hot_icon.png"></img>
+            最新热门电影
+        </div>
+        <div class="datas clearfix">
+            <div class="imageLi col-xs-6 col-md-3" th:each="newestIndexHotFilm:${application.newestIndexHotFilmList}">
+                <a target="_blank" th:href="'/film/'+${newestIndexHotFilm.id}" th:title="${newestIndexHotFilm.name}"
+                   style="text-align:center">
+                    <img class="indexFilm img-center" th:src="${newestIndexHotFilm.imageName}"/>
+                    <p th:text="${newestIndexHotFilm.name}" class="text-center" style="font-size: 11px;"></p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script th:inline="javascript">
+        $(".imageDatas img").addClass("img-responsive");
+    </script>
+</div>
+

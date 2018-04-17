@@ -1,0 +1,24 @@
+<meta charset="UTF-8"></meta>
+<div id="f">
+    <div class="data_list">
+        <div class="data_list_title">
+            <img src="/static/images/list_icon.png"></img>
+            电影列表
+        </div>
+        <div class="datas clearfix">
+            <div class="imageLi col-xs-6 col-md-3" th:each="film:${filmList}">
+                <a target="_blank" th:href="'/film/'+${film.id}" th:title="${film.name}">
+                    <img class="indexFilm  img-center" th:src="${film.imageName}"></img>
+                    <p th:text="${film.name}" class="text-center" style="font-size: 11px;"></p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <nav>
+            <ul class="pagination pagination-sm" th:utext="${pageCode}">
+            </ul>
+        </nav>
+    </div>
+</div>
